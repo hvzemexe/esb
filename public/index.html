@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espoir Sportif Bouchemma — ESB 2001</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#081228; --navy-900:#0d1c3d; --navy-800:#132752; --navy-700:#1c3670;
+    --accent:#c8a24d; --accent-light:#e2c583;
+    --cream:#f4f2ec; --paper:#faf9f5; --ink:#12172a; --ink-soft:#4b5266; --line:#e2ded0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Source Sans 3', sans-serif; color:var(--ink); background:var(--paper); line-height:1.55; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Oswald', sans-serif; font-weight:600; letter-spacing:.01em; color:var(--navy-900);}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  button{font-family:inherit;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+  section{padding:96px 0;}
+  @media (max-width:720px){ section{padding:64px 0;} .wrap{padding:0 20px;} }
+
+  header{position:fixed; top:0; left:0; right:0; z-index:100; background:transparent; transition:background .35s ease, box-shadow .35s ease, padding .35s ease; padding:22px 0;}
+  header.scrolled{background:rgba(8,18,40,.94); backdrop-filter:blur(6px); box-shadow:0 8px 24px rgba(0,0,0,.18); padding:12px 0;}
+  nav{display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:12px; color:#fff;}
+  .brand img{width:44px; height:44px; border-radius:50%;}
+  .brand-text{display:flex; flex-direction:column; line-height:1.15;}
+  .brand-text .fr{font-family:'Oswald',sans-serif; font-weight:600; font-size:15px; letter-spacing:.03em;}
+  .brand-text .ar{font-size:12px; color:var(--accent-light); direction:rtl;}
+  .navlinks{display:flex; gap:34px; list-style:none;}
+  .navlinks a{color:#eceaf0; font-size:14.5px; font-weight:500; position:relative; padding-bottom:4px;}
+  .navlinks a::after{content:"";position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--accent); transition:width .25s ease;}
+  .navlinks a:hover::after{width:100%;}
+  .navcta{background:var(--accent); color:var(--navy-950); padding:10px 20px; border-radius:2px; font-weight:600; font-size:14px; cursor:pointer; border:none;}
+  .menu-toggle{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer;}
+  .menu-toggle span{width:24px; height:2px; background:#fff;}
+  @media (max-width:880px){
+    .navlinks{position:fixed; top:0; right:0; height:100vh; width:min(78vw,320px); background:var(--navy-950);
+      flex-direction:column; padding:100px 32px; gap:26px; transform:translateX(100%); transition:transform .35s ease;}
+    .navlinks.open{transform:translateX(0);}
+    .navcta{display:none;}
+    .menu-toggle{display:flex;}
+  }
+
+  .hero{min-height:100vh; display:flex; align-items:center; position:relative;
+    background:radial-gradient(ellipse at 75% 15%, rgba(200,162,77,.16), transparent 55%), linear-gradient(160deg, var(--navy-950) 0%, var(--navy-900) 45%, var(--navy-800) 100%);
+    overflow:hidden; padding-top:120px;}
+  .hero::before{content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(115deg, rgba(255,255,255,.025) 0 2px, transparent 2px 64px); pointer-events:none;}
+  .hero .wrap{display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:60px; position:relative; z-index:2;}
+  @media (max-width:880px){ .hero .wrap{grid-template-columns:1fr; text-align:center;} }
+  .eyebrow-row{display:flex; align-items:center; gap:12px; margin-bottom:22px; color:var(--accent-light); font-size:14px;}
+  @media (max-width:880px){ .eyebrow-row{justify-content:center;} }
+  .eyebrow-row .dash{width:34px; height:1px; background:var(--accent);}
+  .hero h1{font-size:clamp(40px,6vw,74px); color:#fff; line-height:1.02; letter-spacing:.005em; margin-bottom:6px;}
+  .hero .ar-name{direction:rtl; font-size:clamp(24px,3vw,32px); color:var(--accent-light); margin:14px 0 26px; font-weight:500;}
+  .hero p.lead{color:#c7cbe0; font-size:18px; max-width:480px; margin-bottom:36px;}
+  @media (max-width:880px){ .hero p.lead{margin-left:auto; margin-right:auto;} }
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap;}
+  @media (max-width:880px){ .hero-actions{justify-content:center;} }
+  .btn{display:inline-block; padding:15px 30px; font-weight:600; font-size:14.5px; border-radius:2px; transition:transform .2s ease, box-shadow .2s ease; cursor:pointer; border:none;}
+  .btn-primary{background:var(--accent); color:var(--navy-950);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(200,162,77,.3);}
+  .btn-ghost{border:1.5px solid rgba(255,255,255,.35); color:#fff; background:transparent;}
+  .btn-ghost:hover{border-color:var(--accent); color:var(--accent-light);}
+  .hero-crest{display:flex; align-items:center; justify-content:center; position:relative;}
+  .hero-crest img{width:min(340px,80%); filter:drop-shadow(0 30px 60px rgba(0,0,0,.5));}
+  .hero-crest::after{content:""; position:absolute; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(200,162,77,.12), transparent 70%); z-index:-1;}
+
+  .stats{background:var(--navy-950); border-top:1px solid rgba(255,255,255,.08);}
+  .stats .wrap{display:grid; grid-template-columns:repeat(4,1fr);}
+  .stat{padding:34px 20px; text-align:center; border-left:1px solid rgba(255,255,255,.08);}
+  .stat:first-child{border-left:none;}
+  .stat .num{font-family:'Oswald',sans-serif; font-size:28px; color:var(--accent-light); font-weight:600;}
+  .stat .label{color:#9aa1bd; font-size:13px; margin-top:6px;}
+  @media (max-width:720px){ .stats .wrap{grid-template-columns:repeat(2,1fr);} .stat{border-left:none; border-bottom:1px solid rgba(255,255,255,.08);} }
+
+  .sec-head{display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:46px; gap:24px; flex-wrap:wrap;}
+  .sec-head h2{font-size:clamp(28px,3.4vw,40px);}
+  .sec-head .kicker{color:var(--accent); font-weight:600; font-size:13.5px; margin-bottom:8px; display:block;}
+  .sec-head p{color:var(--ink-soft); max-width:420px; font-size:15px;}
+
+  .news-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:26px;}
+  @media (max-width:880px){ .news-grid{grid-template-columns:1fr;} }
+  .news-card{background:#fff; border:1px solid var(--line); display:flex; flex-direction:column; overflow:hidden;}
+  .news-card .thumb{height:190px; background:linear-gradient(135deg,var(--navy-800),var(--navy-950)); display:flex; align-items:center; justify-content:center; position:relative;}
+  .news-card:nth-child(1) .thumb{height:280px;}
+  .news-card .thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .news-card .thumb .date-badge{z-index:2;}
+  .news-card .thumb .mono{color:rgba(255,255,255,.14); font-family:'Oswald',sans-serif; font-size:64px; font-weight:700;}
+  .news-card .thumb .date-badge{position:absolute; top:16px; left:16px; background:var(--accent); color:var(--navy-950); padding:6px 12px; font-size:12.5px; font-weight:700; font-family:'Oswald',sans-serif;}
+  .news-card .read-more{color:var(--navy-900); font-weight:700; font-size:14px; border-bottom:2px solid var(--accent); align-self:flex-start; padding-bottom:2px;}
+  .news-card .read-more:hover{color:var(--accent);}
+  .news-card .body{padding:22px; display:flex; flex-direction:column; gap:10px; flex:1;}
+  .news-card h3{font-size:19px; line-height:1.25;}
+  .news-card p{color:var(--ink-soft); font-size:14.5px; flex:1;}
+
+  .history{background:var(--navy-950); color:#fff;}
+  .history .sec-head h2{color:#fff;}
+  .history .sec-head p{color:#9aa1bd;}
+  .timeline{display:flex; flex-direction:column;}
+  .tl-item{display:grid; grid-template-columns:120px 24px 1fr; padding:26px 0; border-bottom:1px solid rgba(255,255,255,.09);}
+  .tl-item:last-child{border-bottom:none;}
+  .tl-year{font-family:'Oswald',sans-serif; font-size:26px; color:var(--accent-light); font-weight:600;}
+  .tl-dot-col{display:flex; justify-content:center;}
+  .tl-dot{width:10px; height:10px; border-radius:50%; background:var(--accent); margin-top:8px;}
+  .tl-text h4{color:#fff; font-size:17px; margin-bottom:6px;}
+  .tl-text p{color:#aeb3ca; font-size:14.5px; max-width:560px;}
+  @media (max-width:640px){ .tl-item{grid-template-columns:70px 20px 1fr;} .tl-year{font-size:20px;} }
+
+  .squad-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  @media (max-width:940px){ .squad-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .squad-grid{grid-template-columns:1fr;} }
+  .player{background:#fff; border:1px solid var(--line); overflow:hidden;}
+  .player .plate{height:180px; background:linear-gradient(160deg,var(--navy-800),var(--navy-700)); display:flex; align-items:center; justify-content:center;}
+  .player .plate .num{font-family:'Oswald',sans-serif; font-size:72px; color:rgba(255,255,255,.9); font-weight:700;}
+  .player .plate{position:relative; overflow:hidden;}
+  .player .plate.has-photo{height:auto; aspect-ratio:4/5; background:var(--navy-800);}
+  .player .plate.has-photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top;}
+  .player .plate.has-photo .num{position:absolute; left:0; bottom:12px; font-size:26px; line-height:1; background:var(--accent); color:var(--navy-950); padding:6px 14px 5px;}
+  .player .info{padding:16px 18px 20px;}
+  .player .info .pos{color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.04em;}
+  .player .info h4{font-size:17px; margin-top:4px;}
+
+  .fixtures-list{display:flex; flex-direction:column; border-top:1px solid var(--line);}
+  .fixture{display:grid; grid-template-columns:110px 1fr auto; align-items:center; gap:20px; padding:22px 0; border-bottom:1px solid var(--line);}
+  .fixture .when{display:flex; flex-direction:column;}
+  .fixture .when .d{font-family:'Oswald',sans-serif; font-size:24px; color:var(--navy-900); font-weight:600;}
+  .fixture .when .m{font-size:12.5px; color:var(--ink-soft);}
+  .fixture .teams{display:flex; align-items:center; gap:18px; font-family:'Oswald',sans-serif; font-size:18px; color:var(--navy-900); flex-wrap:wrap;}
+  .fixture .team{display:inline-flex; align-items:center; gap:10px;}
+  .fixture .team img{width:36px; height:36px; object-fit:contain; flex-shrink:0;}
+  .fixture .teams .vs{color:var(--accent); font-size:13px; font-weight:700;}
+  .fixture .comp{font-size:12.5px; color:var(--ink-soft); margin-top:4px; font-family:'Source Sans 3',sans-serif;}
+  .fixture .tag{display:inline-block; background:var(--cream); border:1px solid var(--line); padding:5px 12px; font-size:12px; font-weight:600; color:var(--navy-800); white-space:nowrap;}
+  @media (max-width:640px){ .fixture{grid-template-columns:70px 1fr; row-gap:8px;} .fixture .venue{grid-column:1/-1;} }
+
+  .fixture .score{font-family:'Oswald',sans-serif; background:var(--navy-900); color:#fff; padding:4px 14px; font-size:20px; letter-spacing:.04em;}
+  .table-wrap{overflow-x:auto; background:#fff; border:1px solid var(--line);}
+  .standings{width:100%; border-collapse:collapse; font-size:14.5px; min-width:560px;}
+  .standings th{background:var(--navy-900); color:#fff; font-family:'Oswald',sans-serif; font-weight:500; font-size:13px; padding:12px 10px; text-align:center;}
+  .standings td{padding:12px 10px; text-align:center; border-top:1px solid var(--line);}
+  .standings th.t, .standings td.t{text-align:left;}
+  .standings td.t{font-weight:600; color:var(--navy-900);}
+  .standings td.t span{display:inline-flex; align-items:center; gap:10px;}
+  .standings td.t img{width:26px; height:26px; object-fit:contain;}
+  .standings td.pts{font-family:'Oswald',sans-serif; font-weight:700; font-size:16px; color:var(--navy-900);}
+  .standings tr.us td{background:rgba(200,162,77,.16);}
+  .buyer{display:grid; grid-template-columns:1fr 1fr; gap:14px; max-width:520px; margin-bottom:26px;}
+  .buyer label{display:block; font-size:12.5px; color:var(--ink-soft); font-weight:600; margin-bottom:6px;}
+  .buyer input{width:100%; border:1px solid var(--line); padding:11px 12px; font-size:14px; font-family:inherit; background:#fff;}
+  .buyer input.need{border-color:#b3261e; box-shadow:0 0 0 2px rgba(179,38,30,.15);}
+  @media (max-width:520px){ .buyer{grid-template-columns:1fr;} }
+  .shop-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  @media (max-width:1000px){ .shop-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .shop-grid{grid-template-columns:1fr;} }
+  .product{background:#fff; border:1px solid var(--line); display:flex; flex-direction:column; overflow:hidden;}
+  .product .pimg{aspect-ratio:1/1; background:linear-gradient(160deg,var(--navy-800),var(--navy-950)); position:relative; display:flex; align-items:center; justify-content:center;}
+  .product .pimg img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .product .pimg .mono{color:rgba(255,255,255,.14); font-family:'Oswald',sans-serif; font-size:56px; font-weight:700;}
+  .product .soldout{position:absolute; top:12px; left:12px; background:#b3261e; color:#fff; font-size:12px; font-weight:700; padding:5px 10px; font-family:'Oswald',sans-serif;}
+  .product .pbody{padding:16px 18px 20px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .product h4{font-size:17px;}
+  .product .pdesc{color:var(--ink-soft); font-size:14px; flex:1;}
+  .product .price{font-family:'Oswald',sans-serif; font-size:20px; color:var(--accent); font-weight:600;}
+  .product .size-select{border:1px solid var(--line); padding:9px 10px; font-size:14px; font-family:inherit; background:#fff; width:100%;}
+  .product .size-select.need{border-color:#b3261e; box-shadow:0 0 0 2px rgba(179,38,30,.15);}
+  .product .order{display:block; text-align:center; background:var(--navy-900); color:#fff; padding:11px; font-weight:600; font-size:14px;}
+  .product .order:hover{background:var(--accent); color:var(--navy-950);}
+  .product .order.off{background:var(--line); color:var(--ink-soft); pointer-events:none;}
+  .shop-note{margin-top:28px; color:var(--ink-soft); font-size:14px;}
+
+  .values{background:var(--cream);}
+  .value-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:30px; margin-top:10px;}
+  @media (max-width:820px){ .value-grid{grid-template-columns:1fr;} }
+  .value-card{background:var(--paper); border:1px solid var(--line); padding:32px;}
+  .value-card .vnum{font-family:'Oswald',sans-serif; color:var(--accent); font-size:15px; font-weight:600; margin-bottom:14px;}
+  .value-card h3{font-size:20px; margin-bottom:10px;}
+  .value-card p{color:var(--ink-soft); font-size:14.5px;}
+
+  .join{background:linear-gradient(160deg,var(--navy-900),var(--navy-950)); color:#fff;}
+  .join .wrap{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
+  @media (max-width:880px){ .join .wrap{grid-template-columns:1fr;} }
+  .join h2{color:#fff;}
+  .join p.lead{color:#aeb3ca; font-size:15.5px; margin:16px 0 30px; max-width:440px;}
+  .contact-list{display:flex; flex-direction:column; gap:18px;}
+  .contact-list .item{display:flex; gap:14px; align-items:flex-start;}
+  .contact-list .ico{width:38px; height:38px; border:1px solid rgba(255,255,255,.25); flex-shrink:0; display:flex; align-items:center; justify-content:center; color:var(--accent-light); font-size:15px;}
+  .contact-list .txt strong{display:block; font-size:14.5px;}
+  .contact-list .txt span{color:#9aa1bd; font-size:13.5px;}
+
+  footer{background:var(--navy-950); border-top:1px solid rgba(255,255,255,.08); color:#8b91ac; padding:50px 0 28px;}
+  .foot-top{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; padding-bottom:34px; border-bottom:1px solid rgba(255,255,255,.08);}
+  .foot-brand{display:flex; align-items:center; gap:12px;}
+  .foot-brand img{width:40px; height:40px; border-radius:50%;}
+  .foot-brand span{color:#fff; font-family:'Oswald',sans-serif; font-size:15px;}
+  .foot-social{display:flex; gap:14px;}
+  .foot-social a{width:36px; height:36px; border:1px solid rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center; font-size:13px; color:#c7cbe0;}
+  .foot-social a:hover{border-color:var(--accent); color:var(--accent-light);}
+  .foot-bottom{display:flex; justify-content:space-between; padding-top:22px; font-size:12.5px; flex-wrap:wrap; gap:10px;}
+  .admin-link{background:none; border:none; color:#6b7290; font-size:12px; cursor:pointer; text-decoration:underline;}
+  .admin-link:hover{color:var(--accent-light);}
+
+  /* ---------- ADMIN ---------- */
+  .admin-overlay{position:fixed; inset:0; z-index:1000; background:var(--paper); display:none; overflow-y:auto;}
+  .admin-overlay.open{display:block;}
+  .admin-bar{position:sticky; top:0; background:var(--navy-950); color:#fff; padding:16px 28px; display:flex; align-items:center; justify-content:space-between; z-index:5;}
+  .admin-bar h2{color:#fff; font-size:18px;}
+  .admin-bar .right{display:flex; gap:12px; align-items:center;}
+  .admin-close{background:none; border:1px solid rgba(255,255,255,.3); color:#fff; padding:8px 16px; border-radius:2px; cursor:pointer; font-size:13px;}
+  .admin-save{background:var(--accent); color:var(--navy-950); border:none; padding:8px 18px; border-radius:2px; cursor:pointer; font-weight:700; font-size:13px;}
+  .admin-save:disabled{opacity:.6; cursor:not-allowed;}
+  .admin-body{max-width:980px; margin:0 auto; padding:32px 28px 100px;}
+  .admin-tabs{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px; border-bottom:1px solid var(--line);}
+  .admin-tab{padding:10px 16px; font-size:13.5px; font-weight:600; color:var(--ink-soft); cursor:pointer; border-bottom:2px solid transparent;}
+  .admin-tab.active{color:var(--navy-900); border-color:var(--accent);}
+  .admin-panel{display:none;}
+  .admin-panel.active{display:block;}
+  .admin-panel h3{font-size:16px; margin-bottom:16px;}
+  .field-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:28px;}
+  .field-grid.full{grid-template-columns:1fr;}
+  @media (max-width:640px){ .field-grid{grid-template-columns:1fr;} }
+  .field{display:flex; flex-direction:column; gap:6px;}
+  .field label{font-size:12.5px; color:var(--ink-soft); font-weight:600;}
+  .field input, .field textarea, .field select{border:1px solid var(--line); padding:10px 12px; font-size:14px; font-family:inherit; background:#fff;}
+  .field textarea{min-height:70px; resize:vertical;}
+  .field input[type=color]{padding:4px; height:42px; cursor:pointer;}
+  .repeat-item{border:1px solid var(--line); background:#fff; padding:16px; margin-bottom:12px; position:relative;}
+  .repeat-item .del{position:absolute; top:10px; right:10px; background:#fff0f0; color:#b3261e; border:1px solid #f2c9c5; font-size:12px; padding:4px 10px; cursor:pointer;}
+  .add-btn{background:var(--navy-900); color:#fff; border:none; padding:10px 18px; font-size:13.5px; font-weight:600; cursor:pointer; margin-top:4px;}
+  .photo-field{grid-column:1/-1;}
+  .photo-field.half{grid-column:auto;}
+  .photo-row{display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
+  .photo-preview{width:96px; height:96px; background:var(--cream); border:1px dashed var(--line); display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:11.5px; text-align:center; overflow:hidden; flex-shrink:0;}
+  .photo-preview img{width:100%; height:100%; object-fit:cover;}
+  .photo-actions{display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
+  .photo-btn{background:var(--navy-900); color:#fff; padding:9px 16px; font-size:13px; font-weight:600; cursor:pointer;}
+  .photo-btn.busy{opacity:.6; pointer-events:none;}
+  .photo-del{background:#fff; color:#b3261e; border:1px solid #f2c9c5; font-size:12.5px; padding:8px 12px; cursor:pointer;}
+  .admin-login{position:fixed; inset:0; z-index:1001; background:rgba(8,18,40,.92); display:none; align-items:center; justify-content:center;}
+  .admin-login.open{display:flex;}
+  .admin-login-card{background:#fff; padding:36px; width:min(360px,90vw); text-align:center;}
+  .admin-login-card h3{margin-bottom:8px;}
+  .admin-login-card p{color:var(--ink-soft); font-size:13.5px; margin-bottom:20px;}
+  .admin-login-card input{width:100%; border:1px solid var(--line); padding:11px 13px; margin-bottom:14px; font-size:14px;}
+  .admin-login-card button{width:100%; background:var(--accent); color:var(--navy-950); border:none; padding:12px; font-weight:700; cursor:pointer;}
+  .admin-login-card .err{color:#b3261e; font-size:12.5px; margin-top:10px; display:none;}
+  .save-toast{position:fixed; bottom:24px; right:24px; background:var(--navy-950); color:#fff; padding:14px 20px; border-left:3px solid var(--accent); font-size:13.5px; z-index:1002; transform:translateY(120%); transition:transform .3s ease;}
+  .save-toast.show{transform:translateY(0);}
+  .save-toast.error{border-left-color:#e05a4e;}
+
+  .fade-in{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .fade-in.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <nav>
+      <a href="#top" class="brand">
+        <img id="navLogo" src="images/logo.jpg" alt="Blason ESB">
+        <div class="brand-text">
+          <span class="fr" id="navNameFr">ESPOIR SPORTIF BOUCHEMMA</span>
+          <span class="ar" id="navNameAr">الأمل الرياضي بوشمة</span>
+        </div>
+      </a>
+      <ul class="navlinks" id="navlinks">
+        <li><a href="#actualites">Actualités</a></li>
+        <li><a href="#histoire">Le Club</a></li>
+        <li><a href="#equipe">Équipe</a></li>
+        <li><a href="#calendrier">Calendrier</a></li>
+        <li id="navTable"><a href="#classement">Classement</a></li>
+        <li id="navShop"><a href="#boutique">Boutique</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="navcta" id="openAdminBtn">Espace admin</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow-row"><span class="dash"></span><span id="heroEyebrow">Bouchemma · Tunisie · Fondé en 2001</span></div>
+      <h1 id="heroTitle">L'Amour du Maillot, l'Espoir du Village.</h1>
+      <div class="ar-name" id="heroArName">الأمل الرياضي بوشمة</div>
+      <p class="lead" id="heroLead">Depuis 2001, l'ESB porte les couleurs bleu et blanc de Bouchemma sur les terrains tunisiens.</p>
+      <div class="hero-actions">
+        <a href="#calendrier" class="btn btn-primary">Voir le calendrier</a>
+        <a href="#histoire" class="btn btn-ghost">Découvrir le club</a>
+      </div>
+    </div>
+    <div class="hero-crest"><img id="heroLogo" src="images/logo.jpg" alt="Blason Espoir Sportif Bouchemma"></div>
+  </div>
+</section>
+
+<div class="stats"><div class="wrap" id="statsWrap"></div></div>
+
+<section id="actualites">
+  <div class="wrap">
+    <div class="sec-head fade-in"><div><span class="kicker">À la une</span><h2>Actualités du club</h2></div>
+      <p>Résultats, transferts et vie du club — les dernières nouvelles de l'ESB.</p></div>
+    <div class="news-grid" id="newsGrid"></div>
+  </div>
+</section>
+
+<section class="history" id="histoire">
+  <div class="wrap">
+    <div class="sec-head fade-in"><div><span class="kicker">Depuis 2001</span><h2>L'histoire du club</h2></div>
+      <p>Un parcours construit autour de la formation et de l'ancrage local.</p></div>
+    <div class="timeline" id="historyTimeline"></div>
+  </div>
+</section>
+
+<section id="equipe">
+  <div class="wrap">
+    <div class="sec-head fade-in"><div><span class="kicker">L'effectif</span><h2>Notre équipe</h2></div>
+      <p>Les joueurs qui portent le maillot de l'ESB cette saison.</p></div>
+    <div class="squad-grid" id="squadGrid"></div>
+  </div>
+</section>
+
+<section id="calendrier" style="background:var(--cream)">
+  <div class="wrap">
+    <div class="sec-head fade-in"><div><span class="kicker">Cette saison</span><h2>Calendrier &amp; résultats</h2></div>
+      <p>Les prochains matchs de l'Espoir Sportif Bouchemma.</p></div>
+    <div class="fixtures-list" id="fixturesList"></div>
+  </div>
+</section>
+
+<section id="classement" style="display:none">
+  <div class="wrap">
+    <div class="sec-head fade-in"><div><span class="kicker">Championnat</span><h2>Classement</h2></div>
+      <p>Le classement mis à jour par le club après chaque journée.</p></div>
+    <div class="table-wrap"><table class="standings"><thead><tr><th>#</th><th class="t">Équipe</th><th>J</th><th>G</th><th>N</th><th>P</th><th>BP</th><th>BC</th><th>Diff</th><th>Pts</th></tr></thead><tbody id="standingsBody"></tbody></table></div>
+  </div>
+</section>
+
+<section id="boutique" style="display:none">
+  <div class="wrap">
+    <div class="sec-head fade-in"><div><span class="kicker">Aux couleurs de l'ESB</span><h2>Boutique du club</h2></div>
+      <p>Maillots, écharpes et accessoires pour porter le bleu et blanc.</p></div>
+    <div class="buyer">
+      <div><label for="buyerLast">Nom</label><input id="buyerLast" autocomplete="family-name" placeholder="Votre nom"></div>
+      <div><label for="buyerFirst">Prénom</label><input id="buyerFirst" autocomplete="given-name" placeholder="Votre prénom"></div>
+    </div>
+    <div class="shop-grid" id="shopGrid"></div>
+    <p class="shop-note">Pour commander, saisissez votre nom et prénom, choisissez la taille puis cliquez sur « Commander » : un message WhatsApp est prérempli. Le paiement et la remise se font directement avec le club.</p>
+  </div>
+</section>
+
+<section class="values">
+  <div class="wrap">
+    <div class="sec-head fade-in"><div><span class="kicker">Notre philosophie</span><h2>Ce qui nous porte</h2></div></div>
+    <div class="value-grid">
+      <div class="value-card fade-in"><div class="vnum">Formation</div><h3>Faire grandir les jeunes</h3><p>La formation des jeunes de Bouchemma reste au cœur du projet du club depuis 2001.</p></div>
+      <div class="value-card fade-in"><div class="vnum">Appartenance</div><h3>Un club, un quartier</h3><p>L'ESB rassemble les familles et les habitants autour d'une même passion, match après match.</p></div>
+      <div class="value-card fade-in"><div class="vnum">Engagement</div><h3>Le travail avant tout</h3><p>Rigueur à l'entraînement et esprit d'équipe : les valeurs transmises à chaque génération de joueurs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Nous contacter</span>
+      <h2>Rejoignez la famille de l'ESB</h2>
+      <p class="lead">Pour une inscription, un partenariat ou toute question sur le club, contactez-nous directement.</p>
+      <div class="contact-list" id="contactList"></div>
+    </div>
+    <div class="form-card fade-in" style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.14); padding:36px;">
+      <h3 style="color:#fff; font-size:20px; margin-bottom:22px;">Envoyer un message</h3>
+      <form id="contactForm">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+          <div><label style="display:block;font-size:12.5px;color:#c7cbe0;margin-bottom:6px;">Nom</label><input type="text" id="cLast" required style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);color:#fff;padding:11px 13px;font-size:14px;"></div>
+          <div><label style="display:block;font-size:12.5px;color:#c7cbe0;margin-bottom:6px;">Prénom</label><input type="text" id="cFirst" required style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);color:#fff;padding:11px 13px;font-size:14px;"></div>
+        </div>
+        <div style="margin-bottom:16px;"><label style="display:block;font-size:12.5px;color:#c7cbe0;margin-bottom:6px;">Message</label><textarea id="cMsg" required style="width:100%;min-height:90px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);color:#fff;padding:11px 13px;font-size:14px;"></textarea></div>
+        <button type="submit" style="width:100%;background:var(--accent);color:var(--navy-950);border:none;padding:14px;font-weight:700;font-size:14.5px;cursor:pointer;">Envoyer par WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand"><img id="footLogo" src="images/logo.jpg" alt="ESB"><span id="footName">ESPOIR SPORTIF BOUCHEMMA</span></div>
+      <div class="foot-social" id="footSocial"></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Espoir Sportif Bouchemma. Tous droits réservés.</span>
+      <button class="admin-link" id="openAdminBtn2">Espace admin</button>
+    </div>
+  </div>
+</footer>
+
+<!-- ADMIN LOGIN -->
+<div class="admin-login" id="adminLogin">
+  <div class="admin-login-card">
+    <h3>Espace admin</h3>
+    <p>Entrez le mot de passe pour gérer le contenu du site.</p>
+    <input type="password" id="adminPasswordInput" placeholder="Mot de passe">
+    <button id="adminLoginBtn">Se connecter</button>
+    <div class="err" id="adminLoginErr">Mot de passe incorrect.</div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-bar">
+    <h2>Espace admin — ESB</h2>
+    <div class="right">
+      <button class="admin-save" id="saveAllBtn">Enregistrer et publier</button>
+      <button class="admin-close" id="closeAdminBtn">Fermer</button>
+    </div>
+  </div>
+  <div class="admin-body">
+    <div class="admin-tabs">
+      <div class="admin-tab active" data-tab="general">Général</div>
+      <div class="admin-tab" data-tab="news">Actualités</div>
+      <div class="admin-tab" data-tab="history">Histoire</div>
+      <div class="admin-tab" data-tab="squad">Effectif</div>
+      <div class="admin-tab" data-tab="fixtures">Calendrier</div>
+      <div class="admin-tab" data-tab="standings">Classement</div>
+      <div class="admin-tab" data-tab="shop">Boutique</div>
+      <div class="admin-tab" data-tab="contact">Contact</div>
+      <div class="admin-tab" data-tab="security">Sécurité</div>
+    </div>
+
+    <div class="admin-panel active" id="panel-general">
+      <h3>Informations générales</h3>
+      <div class="field-grid">
+        <div class="field"><label>Nom du club (FR)</label><input id="g_clubNameFr"></div>
+        <div class="field"><label>Nom du club (AR)</label><input id="g_clubNameAr" dir="rtl"></div>
+        <div class="field"><label>Titre principal (hero)</label><input id="g_heroTitle"></div>
+        <div class="field"><label>Sous-titre (ligne au-dessus du titre)</label><input id="g_heroEyebrow"></div>
+        <div class="field full" style="grid-column:1/-1;"><label>Texte d'accroche (hero)</label><textarea id="g_heroLead"></textarea></div>
+        <div class="field"><label>Ville</label><input id="g_city"></div>
+        <div class="field"><label>Année de fondation</label><input id="g_founded"></div>
+        <div class="field"><label>Couleurs (texte affiché)</label><input id="g_colorsLabel"></div>
+        <div class="field"><label>Couleur principale</label><input type="color" id="g_primaryColor"></div>
+        <div class="field"><label>Couleur d'accent</label><input type="color" id="g_accentColor"></div>
+      </div>
+    </div>
+
+    <div class="admin-panel" id="panel-news">
+      <h3>Actualités</h3>
+      <div id="newsRepeat"></div>
+      <button class="add-btn" data-add="news">+ Ajouter une actualité</button>
+    </div>
+
+    <div class="admin-panel" id="panel-history">
+      <h3>Histoire du club</h3>
+      <div id="historyRepeat"></div>
+      <button class="add-btn" data-add="history">+ Ajouter une étape</button>
+    </div>
+
+    <div class="admin-panel" id="panel-squad">
+      <h3>Effectif</h3>
+      <div id="squadRepeat"></div>
+      <button class="add-btn" data-add="squad">+ Ajouter un joueur</button>
+    </div>
+
+    <div class="admin-panel" id="panel-fixtures">
+      <h3>Calendrier</h3>
+      <div id="fixturesRepeat"></div>
+      <button class="add-btn" data-add="fixtures">+ Ajouter un match</button>
+    </div>
+
+    <div class="admin-panel" id="panel-standings">
+      <h3>Classement</h3>
+      <p style="color:var(--ink-soft); font-size:13px; margin-bottom:14px;">Saisissez pour chaque équipe : victoires, nuls, défaites, buts pour et buts contre. Les matchs joués, la différence de buts, les points (3 / 1 / 0) et l'ordre du classement sont calculés automatiquement.</p>
+      <div id="standingsRepeat"></div>
+      <button class="add-btn" data-add="standings">+ Ajouter une équipe</button>
+    </div>
+
+    <div class="admin-panel" id="panel-shop">
+      <h3>Boutique</h3>
+      <div id="shopRepeat"></div>
+      <button class="add-btn" data-add="shop">+ Ajouter un article</button>
+      <p style="color:var(--ink-soft); font-size:13px; margin-top:14px;">Les commandes arrivent par WhatsApp au numéro de l'onglet Contact. Sans article, la boutique est masquée sur le site.</p>
+    </div>
+
+    <div class="admin-panel" id="panel-contact">
+      <h3>Coordonnées</h3>
+      <div class="field-grid">
+        <div class="field"><label>Adresse</label><input id="c_address"></div>
+        <div class="field"><label>Email</label><input id="c_email"></div>
+        <div class="field"><label>Téléphone</label><input id="c_phone"></div>
+        <div class="field"><label>Facebook (URL)</label><input id="c_facebook"></div>
+        <div class="field"><label>Instagram (URL)</label><input id="c_instagram"></div>
+        <div class="field"><label>YouTube (URL)</label><input id="c_youtube"></div>
+      </div>
+    </div>
+
+    <div class="admin-panel" id="panel-security">
+      <h3>Sécurité</h3>
+      <div class="field-grid">
+        <div class="field"><label>Nouveau mot de passe admin</label><input type="password" id="s_newPassword" placeholder="Laisser vide pour ne pas changer" minlength="6"></div>
+      </div>
+      <button class="add-btn" id="changePasswordBtn">Changer le mot de passe</button>
+      <p style="color:var(--ink-soft); font-size:13px; margin-top:14px;">Ce mot de passe protège l'accès à l'espace admin. Changez-le après la première utilisation (6 caractères minimum).</p>
+    </div>
+  </div>
+</div>
+
+<div class="save-toast" id="saveToast">Modifications enregistrées.</div>
+
+<script>
+const API = ''; // same-origin API (Express serves this file)
+
+let content = null;
+
+/* ============ API HELPERS ============ */
+async function apiGet(url){
+  const r = await fetch(API + url, { credentials: 'include' });
+  if(!r.ok) throw new Error((await r.json().catch(()=>({}))).error || 'Erreur réseau');
+  return r.json();
+}
+async function apiPost(url, body){
+  const r = await fetch(API + url, {
+    method: 'POST', credentials: 'include',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body || {})
+  });
+  const data = await r.json().catch(()=>({}));
+  if(!r.ok) throw new Error(data.error || 'Erreur réseau');
+  return data;
+}
+async function apiPut(url, body){
+  const r = await fetch(API + url, {
+    method: 'PUT', credentials: 'include',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+  const data = await r.json().catch(()=>({}));
+  if(!r.ok) throw new Error(data.error || 'Erreur réseau');
+  return data;
+}
+
+/* ============ LOAD / RENDER ============ */
+async function loadContent(){
+  try{
+    const res = await apiGet('/api/content');
+    content = res.content;
+    content.shop = content.shop || [];
+    content.standings = content.standings || [];
+    renderAll();
+  }catch(e){
+    showToast('Impossible de charger le contenu : ' + e.message, true);
+  }
+}
+
+function renderAll(){
+  applyTheme();
+  const g = content.general;
+  document.getElementById('navNameFr').textContent = g.clubNameFr;
+  document.getElementById('navNameAr').textContent = g.clubNameAr;
+  document.getElementById('footName').textContent = g.clubNameFr;
+  document.getElementById('heroEyebrow').textContent = g.heroEyebrow;
+  document.getElementById('heroTitle').textContent = g.heroTitle;
+  document.getElementById('heroArName').textContent = g.clubNameAr;
+  document.getElementById('heroLead').textContent = g.heroLead;
+
+  document.getElementById('statsWrap').innerHTML = `
+    <div class="stat"><div class="num">${esc(g.founded)}</div><div class="label">Année de fondation</div></div>
+    <div class="stat"><div class="num">${esc(g.colorsLabel)}</div><div class="label">Couleurs du club</div></div>
+    <div class="stat"><div class="num">${esc(g.city)}</div><div class="label">Ville d'attache</div></div>
+    <div class="stat"><div class="num">ESB</div><div class="label">Code du club</div></div>`;
+
+  document.getElementById('newsGrid').innerHTML = content.news.map(n => `
+    <article class="news-card fade-in in">
+      <div class="thumb"><span class="date-badge">${esc(n.date)}</span>${n.photo ? `<img src="${esc(n.photo)}" alt="${esc(n.title)}" loading="lazy">` : '<span class="mono">ESB</span>'}</div>
+      <div class="body"><h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p>${n.id ? `<a class="read-more" href="/article/${esc(n.id)}">Ouvrir l'article →</a>` : ''}</div>
+    </article>`).join('');
+
+  document.getElementById('historyTimeline').innerHTML = content.history.map(h => `
+    <div class="tl-item fade-in in">
+      <div class="tl-year">${esc(h.year)}</div>
+      <div class="tl-dot-col"><div class="tl-dot"></div></div>
+      <div class="tl-text"><h4>${esc(h.title)}</h4><p>${esc(h.text)}</p></div>
+    </div>`).join('');
+
+  document.getElementById('squadGrid').innerHTML = content.squad.map(p => `
+    <div class="player fade-in in">
+      <div class="plate${p.photo ? ' has-photo' : ''}">${p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy">` : ''}<span class="num">${esc(p.number)}</span></div>
+      <div class="info"><span class="pos">${esc(p.position)}</span><h4>${esc(p.name)}</h4></div>
+    </div>`).join('');
+
+  document.getElementById('fixturesList').innerHTML = content.fixtures.map(f => `
+    <div class="fixture fade-in in">
+      <div class="when"><span class="d">${esc(f.day)}</span><span class="m">${esc(f.month)}</span></div>
+      <div><div class="teams">${teamHtml(f.home, f.homeLogo)} ${scoreHtml(f)} ${teamHtml(f.away, f.awayLogo)}</div><div class="comp">${esc(f.competition)}</div></div>
+      <div class="venue"><span class="tag">${esc(f.venue)}</span></div>
+    </div>`).join('');
+
+  const table = standingsRows(content.standings || []);
+  document.getElementById('classement').style.display = table.length ? '' : 'none';
+  document.getElementById('navTable').style.display = table.length ? '' : 'none';
+  document.getElementById('standingsBody').innerHTML = table.map((t, i) => `
+    <tr${isOurClub(t.name) ? ' class="us"' : ''}><td>${i + 1}</td>
+      <td class="t"><span>${isOurClub(t.name) ? '<img src="images/logo.jpg" alt="">' : ''}${esc(t.name)}</span></td>
+      <td>${t.played}</td><td>${t.w}</td><td>${t.d}</td><td>${t.l}</td><td>${t.gf}</td><td>${t.ga}</td>
+      <td>${t.diff > 0 ? '+' : ''}${t.diff}</td><td class="pts">${t.pts}</td></tr>`).join('');
+
+  const shop = content.shop || [];
+  document.getElementById('boutique').style.display = shop.length ? '' : 'none';
+  document.getElementById('navShop').style.display = shop.length ? '' : 'none';
+  const ph = String(content.contact.phone || '').replace(/\D/g, '');
+  document.getElementById('shopGrid').innerHTML = shop.map((p, i) => {
+    const out = p.stock === 'out';
+    const sizes = shopSizes(p);
+    return `
+    <div class="product fade-in in">
+      <div class="pimg">${p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy">` : '<span class="mono">ESB</span>'}${out ? '<span class="soldout">ÉPUISÉ</span>' : ''}</div>
+      <div class="pbody"><h4>${esc(p.name)}</h4><p class="pdesc">${esc(p.description)}</p><div class="price">${esc(p.price)}</div>
+      ${sizes.length && !out ? `<select class="size-select" id="size-${i}" aria-label="Taille"><option value="">Choisir la taille…</option>${sizes.map(z => `<option value="${esc(z)}">${esc(z)}</option>`).join('')}</select>` : ''}
+      <a class="order${out ? ' off' : ''}" href="#boutique" ${out ? '' : `data-order="${i}"`}>${out ? 'Indisponible' : 'Commander'}</a></div>
+    </div>`;
+  }).join('');
+
+  const c = content.contact;
+  document.getElementById('contactList').innerHTML = `
+    <div class="item"><div class="ico">📍</div><div class="txt"><strong>Adresse</strong><span>${esc(c.address)}</span></div></div>
+    <div class="item"><div class="ico">✉</div><div class="txt"><strong>Email</strong><span>${esc(c.email)}</span></div></div>
+    <div class="item"><div class="ico">☎</div><div class="txt"><strong>Téléphone</strong><span>${esc(c.phone)}</span></div></div>`;
+
+  const socials = [];
+  if(c.facebook) socials.push(`<a href="${esc(c.facebook)}" target="_blank">f</a>`);
+  if(c.instagram) socials.push(`<a href="${esc(c.instagram)}" target="_blank">ig</a>`);
+  if(c.youtube) socials.push(`<a href="${esc(c.youtube)}" target="_blank">yt</a>`);
+  document.getElementById('footSocial').innerHTML = socials.join('') || '<a href="#">f</a><a href="#">ig</a>';
+}
+
+function shopSizes(p){
+  return String(p.sizes || '').split(',').map(z => z.trim()).filter(Boolean);
+}
+function orderProduct(i){
+  const p = (content.shop || [])[i];
+  if(!p) return;
+  const last = document.getElementById('buyerLast'), first = document.getElementById('buyerFirst');
+  const lastV = last.value.trim(), firstV = first.value.trim();
+  [last, first].forEach(el => el.classList.toggle('need', !el.value.trim()));
+  if(!lastV || !firstV){
+    (lastV ? first : last).focus();
+    return showToast('Renseignez votre nom et votre prénom avant de commander.', true);
+  }
+  const sel = document.getElementById('size-' + i);
+  const size = sel ? sel.value : '';
+  if(sel && !size){
+    sel.classList.add('need'); sel.focus();
+    return showToast('Choisissez une taille avant de commander.', true);
+  }
+  const text = 'Bonjour, je suis ' + firstV + ' ' + lastV + ' et je souhaite commander : ' + (p.name || '') + (size ? ' — taille ' + size : '') + (p.price ? ' (' + p.price + ')' : '') + '.';
+  const ph = String((content.contact || {}).phone || '').replace(/\D/g, '');
+  const url = ph ? 'https://wa.me/' + ph + '?text=' + encodeURIComponent(text)
+                 : 'mailto:' + ((content.contact || {}).email || '') + '?subject=' + encodeURIComponent('Commande : ' + (p.name || '')) + '&body=' + encodeURIComponent(text);
+  window.open(url, '_blank', 'noopener');
+}
+
+function scoreHtml(f){
+  const h = String(f.homeScore ?? '').trim(), a = String(f.awayScore ?? '').trim();
+  return (h !== '' && a !== '') ? `<span class="score">${esc(h)} - ${esc(a)}</span>` : '<span class="vs">VS</span>';
+}
+function standingsRows(list){
+  const n = v => Number(String(v ?? '').replace(',', '.')) || 0;
+  return list.map(t => {
+    const w = n(t.won), d = n(t.drawn), l = n(t.lost), gf = n(t.gf), ga = n(t.ga);
+    return { name: t.team || '', w, d, l, gf, ga, played: w + d + l, diff: gf - ga, pts: 3 * w + d };
+  }).sort((x, y) => y.pts - x.pts || y.diff - x.diff || y.gf - x.gf || x.name.localeCompare(y.name));
+}
+
+// Reconnaît notre club : « ESB », « E.S.B. », « Espoir Sportif Bouchemma », « ESB Bouchemma »...
+function isOurClub(name){
+  const n = String(name||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\./g,'').trim();
+  return /(^|[^a-z])esb([^a-z]|$)/.test(n) || n.includes('bouchemma');
+}
+function teamHtml(name, logo){
+  // Sans logo fourni, notre club affiche automatiquement son blason.
+  const src = logo || (isOurClub(name) ? 'images/logo.jpg' : '');
+  return `<span class="team">${src ? `<img src="${esc(src)}" alt="" loading="lazy">` : ''}<span>${esc(name)}</span></span>`;
+}
+
+function applyTheme(){
+  const g = content.general;
+  document.documentElement.style.setProperty('--navy-950', shade(g.primaryColor, -0.35));
+  document.documentElement.style.setProperty('--navy-900', g.primaryColor);
+  document.documentElement.style.setProperty('--navy-800', shade(g.primaryColor, 0.15));
+  document.documentElement.style.setProperty('--navy-700', shade(g.primaryColor, 0.3));
+  document.documentElement.style.setProperty('--accent', g.accentColor);
+  document.documentElement.style.setProperty('--accent-light', shade(g.accentColor, 0.25));
+}
+function shade(hex, amt){
+  if(!hex) return '#0d1c3d';
+  let c = hex.replace('#','');
+  if(c.length===3) c = c.split('').map(x=>x+x).join('');
+  let r = parseInt(c.substr(0,2),16), g = parseInt(c.substr(2,2),16), b = parseInt(c.substr(4,2),16);
+  const f = (v) => Math.max(0, Math.min(255, Math.round(v + (amt>0 ? (255-v)*amt : v*amt))));
+  r=f(r); g=f(g); b=f(b);
+  return '#' + [r,g,b].map(v=>v.toString(16).padStart(2,'0')).join('');
+}
+function esc(s){ return (s===undefined||s===null) ? '' : String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+/* ============ ADMIN UI ============ */
+const FIELD_DEFS = {
+  news:[['date','Date'],['title','Titre'],['summary',"Résumé (affiché sur la carte et dans l'aperçu du partage)"],['body',"Texte complet de l'article (optionnel)"]],
+  history:[['year','Année'],['title','Titre'],['text','Texte']],
+  squad:[['number','Numéro'],['position','Poste'],['name','Nom']],
+  standings:[['team','Équipe'],['won','Victoires'],['drawn','Nuls'],['lost','Défaites'],['gf','Buts pour'],['ga','Buts contre']],
+  shop:[['name','Article'],['price','Prix (ex. 45 DT)'],['description','Description (taille, matière...)'],['sizes','Tailles proposées (séparées par des virgules, ex. S, M, L, XL — laisser vide si pas de taille)'],['stock','Disponibilité']],
+  fixtures:[['day','Jour'],['month','Mois'],['home','Domicile'],['away','Extérieur'],['homeScore','Score domicile (laisser vide avant le match)'],['awayScore','Score extérieur'],['competition','Compétition'],['venue','Lieu / heure']]
+};
+// Champs image par section : [champ, libellé, taille max px, PNG (garde la transparence)]
+const PHOTO_FIELDS = {
+  news:[['photo','Photo',1200,false]],
+  squad:[['photo','Photo',800,false]],
+  shop:[['photo','Photo de l\'article',900,false]],
+  fixtures:[['homeLogo','Logo équipe domicile',300,true],['awayLogo','Logo équipe extérieur',300,true]]
+};
+const EMPTY_ITEM = {
+  news:{date:'',title:'',summary:'',body:'',photo:''},
+  history:{year:'',title:'',text:''},
+  squad:{number:'',position:'',name:'',photo:''},
+  standings:{team:'',won:'0',drawn:'0',lost:'0',gf:'0',ga:'0'},
+  shop:{name:'',price:'',description:'',sizes:'',stock:'in',photo:''},
+  fixtures:{day:'',month:'',home:'',away:'',homeScore:'',awayScore:'',competition:'',venue:'',homeLogo:'',awayLogo:''}
+};
+
+function renderRepeat(key){
+  const container = document.getElementById(key+'Repeat');
+  const defs = FIELD_DEFS[key];
+  container.innerHTML = content[key].map((item, idx) => `
+    <div class="repeat-item" data-idx="${idx}">
+      <button class="del" data-del="${key}" data-idx="${idx}">Supprimer</button>
+      <div class="field-grid">
+        ${defs.map(([f,label]) => `
+          <div class="field"><label>${label}</label>
+          ${ f==='stock' ? `<select data-key="${key}" data-idx="${idx}" data-field="stock"><option value="in"${item.stock!=='out'?' selected':''}>Disponible</option><option value="out"${item.stock==='out'?' selected':''}>Épuisé</option></select>` : (f==='summary'||f==='text'||f==='body'||f==='description') ? `<textarea ${f==='body' ? 'style="min-height:160px"' : ''} data-key="${key}" data-idx="${idx}" data-field="${f}">${esc(item[f])}</textarea>` : `<input data-key="${key}" data-idx="${idx}" data-field="${f}" value="${esc(item[f])}">` }
+          </div>`).join('')}
+        ${key==='news' ? shareFieldHtml(item) : ''}
+        ${(PHOTO_FIELDS[key]||[]).map(([f,label]) => photoFieldHtml(key, idx, f, label, item[f], f==='homeLogo' ? item.home : item.away)).join('')}
+      </div>
+    </div>`).join('');
+}
+
+function shareFieldHtml(item){
+  const link = item.id ? location.origin + '/article/' + item.id : '';
+  return `
+    <div class="field photo-field"><label>Lien de l'article à partager</label>
+      ${link ? `<div class="photo-actions">
+        <input readonly value="${esc(link)}" style="flex:1; min-width:220px;" onclick="this.select()">
+        <button type="button" class="photo-btn" style="border:none" data-copylink="${esc(link)}">Copier le lien</button>
+        <a class="photo-del" style="text-decoration:none; color:var(--navy-900); border-color:var(--line);" href="${esc(link)}" target="_blank">Voir</a>
+      </div>` : `<span style="font-size:13px;color:var(--ink-soft)">Cliquez sur « Enregistrer et publier » pour générer le lien de cette actualité.</span>`}
+    </div>`;
+}
+
+function photoFieldHtml(key, idx, field, label, photo, teamName){
+  const isDefault = !photo && key==='fixtures' && isOurClub(teamName);
+  return `
+    <div class="field photo-field${key==='fixtures' ? ' half' : ''}"><label>${label}${isDefault ? ' — blason du club (par défaut)' : ''}</label>
+      <div class="photo-row">
+        <div class="photo-preview">${photo ? `<img src="${esc(photo)}" alt="">` : (isDefault ? '<img src="images/logo.jpg" alt="">' : 'Aucune photo')}</div>
+        <div class="photo-actions">
+          <label class="photo-btn">${photo ? 'Changer la photo' : 'Choisir une photo'}
+            <input type="file" accept="image/*" hidden data-upload="${key}" data-field="${field}" data-idx="${idx}">
+          </label>
+          ${photo ? `<button type="button" class="photo-del" data-rmphoto="${key}" data-field="${field}" data-idx="${idx}">Retirer</button>` : ''}
+        </div>
+      </div>
+    </div>`;
+}
+
+/* Réduit l'image dans le navigateur (max px, JPEG) avant l'envoi : photos de téléphone = plusieurs Mo sinon. */
+function resizeImage(file, maxSize, asPng){
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.round(img.width * scale);
+      canvas.height = Math.round(img.height * scale);
+      const ctx = canvas.getContext('2d');
+      if(!asPng){ ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, canvas.width, canvas.height); }
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      URL.revokeObjectURL(url);
+      resolve(asPng ? canvas.toDataURL('image/png') : canvas.toDataURL('image/jpeg', 0.82));
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("Image illisible (essayez un fichier JPEG ou PNG).")); };
+    img.src = url;
+  });
+}
+
+async function handlePhotoUpload(input){
+  const key = input.dataset.upload, idx = +input.dataset.idx, field = input.dataset.field;
+  const [, , maxSize, asPng] = PHOTO_FIELDS[key].find(d => d[0] === field);
+  const file = input.files[0];
+  if(!file) return;
+  input.parentElement.classList.add('busy');
+  input.parentElement.firstChild.textContent = 'Envoi en cours...';
+  try{
+    const dataUrl = await resizeImage(file, maxSize, asPng);
+    const res = await apiPost('/api/upload', { dataUrl });
+    collectFormIntoContent();          // garde les textes déjà saisis
+    content[key][idx][field] = res.url;
+    renderRepeat(key);
+    showToast('Image ajoutée — pensez à « Enregistrer et publier ».');
+  }catch(e){
+    showToast('Erreur photo : ' + e.message, true);
+    renderRepeat(key);
+  }
+}
+
+function fillGeneralForm(){
+  const g = content.general;
+  document.getElementById('g_clubNameFr').value = g.clubNameFr;
+  document.getElementById('g_clubNameAr').value = g.clubNameAr;
+  document.getElementById('g_heroTitle').value = g.heroTitle;
+  document.getElementById('g_heroEyebrow').value = g.heroEyebrow;
+  document.getElementById('g_heroLead').value = g.heroLead;
+  document.getElementById('g_city').value = g.city;
+  document.getElementById('g_founded').value = g.founded;
+  document.getElementById('g_colorsLabel').value = g.colorsLabel;
+  document.getElementById('g_primaryColor').value = g.primaryColor;
+  document.getElementById('g_accentColor').value = g.accentColor;
+  const c = content.contact;
+  document.getElementById('c_address').value = c.address;
+  document.getElementById('c_email').value = c.email;
+  document.getElementById('c_phone').value = c.phone;
+  document.getElementById('c_facebook').value = c.facebook;
+  document.getElementById('c_instagram').value = c.instagram;
+  document.getElementById('c_youtube').value = c.youtube;
+}
+
+function collectFormIntoContent(){
+  content.general.clubNameFr = document.getElementById('g_clubNameFr').value;
+  content.general.clubNameAr = document.getElementById('g_clubNameAr').value;
+  content.general.heroTitle = document.getElementById('g_heroTitle').value;
+  content.general.heroEyebrow = document.getElementById('g_heroEyebrow').value;
+  content.general.heroLead = document.getElementById('g_heroLead').value;
+  content.general.city = document.getElementById('g_city').value;
+  content.general.founded = document.getElementById('g_founded').value;
+  content.general.colorsLabel = document.getElementById('g_colorsLabel').value;
+  content.general.primaryColor = document.getElementById('g_primaryColor').value;
+  content.general.accentColor = document.getElementById('g_accentColor').value;
+  content.contact.address = document.getElementById('c_address').value;
+  content.contact.email = document.getElementById('c_email').value;
+  content.contact.phone = document.getElementById('c_phone').value;
+  content.contact.facebook = document.getElementById('c_facebook').value;
+  content.contact.instagram = document.getElementById('c_instagram').value;
+  content.contact.youtube = document.getElementById('c_youtube').value;
+
+  ['news','history','squad','fixtures','shop','standings'].forEach(key => {
+    document.querySelectorAll(`[data-key="${key}"]`).forEach(el => {
+      const idx = +el.dataset.idx, field = el.dataset.field;
+      if(content[key][idx]) content[key][idx][field] = el.value;
+    });
+  });
+}
+
+function openAdmin(){
+  fillGeneralForm();
+  ['news','history','squad','fixtures','shop','standings'].forEach(renderRepeat);
+  document.getElementById('adminOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeAdmin(){
+  document.getElementById('adminOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function showToast(msg, isError){
+  const t = document.getElementById('saveToast');
+  t.textContent = msg;
+  t.classList.toggle('error', !!isError);
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 3500);
+}
+
+document.addEventListener('click', (e) => {
+  if(e.target.dataset.order !== undefined){ e.preventDefault(); orderProduct(+e.target.dataset.order); return; }
+  if(e.target.dataset.add){
+    const key = e.target.dataset.add;
+    collectFormIntoContent();
+    content[key].push(JSON.parse(JSON.stringify(EMPTY_ITEM[key])));
+    renderRepeat(key);
+  }
+  if(e.target.dataset.del){
+    const key = e.target.dataset.del, idx = +e.target.dataset.idx;
+    collectFormIntoContent();
+    content[key].splice(idx,1);
+    renderRepeat(key);
+  }
+  if(e.target.dataset.copylink){
+    const link = e.target.dataset.copylink;
+    (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject())
+      .then(() => showToast('Lien copié — collez-le sur Facebook, WhatsApp...'))
+      .catch(() => { const i = e.target.parentElement.querySelector('input'); i.select(); showToast('Sélectionné : faites Copier (Ctrl+C).'); });
+  }
+  if(e.target.dataset.rmphoto){
+    const key = e.target.dataset.rmphoto, idx = +e.target.dataset.idx, field = e.target.dataset.field;
+    collectFormIntoContent();
+    content[key][idx][field] = '';
+    renderRepeat(key);
+  }
+});
+document.addEventListener('change', (e) => {
+  if(e.target.classList && e.target.classList.contains('size-select')) e.target.classList.remove('need');
+  if(e.target.matches && e.target.matches('input[data-upload]')) handlePhotoUpload(e.target);
+});
+
+document.querySelectorAll('.admin-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.admin-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.admin-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.tab).classList.add('active');
+  });
+});
+
+document.getElementById('saveAllBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('saveAllBtn');
+  collectFormIntoContent();
+  btn.disabled = true; btn.textContent = 'Enregistrement...';
+  try{
+    const res = await apiPut('/api/content', content);
+    content = res.content;
+    renderAll();
+    showToast('Modifications enregistrées et publiées !');
+  }catch(e){
+    if(e.message.includes('authentifié') || e.message.includes('expirée')){
+      showToast('Session expirée, reconnectez-vous.', true);
+      closeAdmin();
+      tryOpenAdmin();
+    } else {
+      showToast('Erreur : ' + e.message, true);
+    }
+  }finally{
+    btn.disabled = false; btn.textContent = 'Enregistrer et publier';
+  }
+});
+
+document.getElementById('changePasswordBtn').addEventListener('click', async () => {
+  const input = document.getElementById('s_newPassword');
+  const newPassword = input.value.trim();
+  if(!newPassword) return showToast('Entrez un nouveau mot de passe.', true);
+  try{
+    await apiPost('/api/change-password', { newPassword });
+    input.value = '';
+    showToast('Mot de passe mis à jour.');
+  }catch(e){
+    showToast('Erreur : ' + e.message, true);
+  }
+});
+
+document.getElementById('closeAdminBtn').addEventListener('click', closeAdmin);
+
+/* Login gate */
+async function tryOpenAdmin(){
+  try{
+    const s = await apiGet('/api/session');
+    if(s.authenticated){ openAdmin(); return; }
+  }catch(e){ /* ignore */ }
+  document.getElementById('adminLogin').classList.add('open');
+  document.getElementById('adminPasswordInput').value = '';
+  document.getElementById('adminLoginErr').style.display = 'none';
+  document.getElementById('adminPasswordInput').focus();
+}
+document.getElementById('openAdminBtn').addEventListener('click', tryOpenAdmin);
+document.getElementById('openAdminBtn2').addEventListener('click', tryOpenAdmin);
+document.getElementById('adminLoginBtn').addEventListener('click', async () => {
+  const val = document.getElementById('adminPasswordInput').value;
+  try{
+    await apiPost('/api/login', { password: val });
+    document.getElementById('adminLogin').classList.remove('open');
+    openAdmin();
+  }catch(e){
+    document.getElementById('adminLoginErr').textContent = e.message;
+    document.getElementById('adminLoginErr').style.display = 'block';
+  }
+});
+document.getElementById('adminPasswordInput').addEventListener('keydown', (e) => {
+  if(e.key === 'Enter') document.getElementById('adminLoginBtn').click();
+});
+
+/* Formulaire de contact -> WhatsApp (ou email si pas de numéro) */
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const first = document.getElementById('cFirst').value.trim(), last = document.getElementById('cLast').value.trim();
+  const msg = document.getElementById('cMsg').value.trim();
+  const text = 'Bonjour, je suis ' + first + ' ' + last + '.\n' + msg;
+  const c = (content && content.contact) || {};
+  const ph = String(c.phone || '').replace(/\D/g, '');
+  const url = ph ? 'https://wa.me/' + ph + '?text=' + encodeURIComponent(text)
+                 : 'mailto:' + (c.email || '') + '?subject=' + encodeURIComponent('Message de ' + first + ' ' + last) + '&body=' + encodeURIComponent(text);
+  window.open(url, '_blank', 'noopener');
+  e.target.reset();
+});
+
+/* Nav */
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+const toggle = document.getElementById('menuToggle');
+const links = document.getElementById('navlinks');
+toggle.addEventListener('click', () => links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+loadContent();
+</script>
+</body>
+</html>
